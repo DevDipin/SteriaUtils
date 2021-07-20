@@ -25,17 +25,17 @@ public class FightCommand {
         if (this.cooldown.containsKey(player.getUniqueId()) && this.cooldown.get(player.getUniqueId()) != null) {
             final long remaining = this.cooldown.get(player.getUniqueId()) - System.currentTimeMillis();
             if (remaining > 0L) {
-                player.sendMessage(Color.translate("&cYou cannot use this command for another &c&l" + DurationFormatUtils.formatDurationWords(this.cooldown.get(player.getUniqueId()) - System.currentTimeMillis(), true, true)) + "&c.");
+                player.sendMessage(Color.translate("&cYou cannot use this command for another &c&l" + DurationFormatUtils.formatDurationWords(this.cooldown.get(player.getUniqueId()) - System.currentTimeMillis(), true, true)));
                 return;
             }
         }
 
         this.cooldown.put(player.getUniqueId(), System.currentTimeMillis() + TimeUnit.MINUTES.toMillis(Long.parseLong("10")));
-        Bukkit.broadcastMessage("&7&l&m----------------------------------------------");
-        Bukkit.broadcastMessage("&b&lPlayer Fights");
+        Bukkit.broadcastMessage(Color.translate("&7&l&m----------------------------------------------"));
+        Bukkit.broadcastMessage(Color.translate("&b&lPlayer Fights"));
         Bukkit.broadcastMessage("");
-        Bukkit.broadcastMessage("&a" + command.getSender() + " &7is currently looking for someone to fight!");
-        Bukkit.broadcastMessage("&aCoordinates: &a&l" + player.getLocation().getBlockX() + "&a&l, " + player.getLocation().getBlockZ());
-        Bukkit.broadcastMessage("&7&l&m----------------------------------------------");
+        Bukkit.broadcastMessage(Color.translate("&a" + command.getSender() + " &7is currently looking for someone to fight!"));
+        Bukkit.broadcastMessage(Color.translate("&aCoordinates: &a&l" + player.getLocation().getBlockX() + "&a&l, " + player.getLocation().getBlockZ()));
+        Bukkit.broadcastMessage(Color.translate("&7&l&m----------------------------------------------"));
     }
 }
