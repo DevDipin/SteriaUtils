@@ -34,7 +34,7 @@ public class FightCommand {
         Bukkit.broadcastMessage(Color.translate("&7&l&m----------------------------------------------"));
         Bukkit.broadcastMessage(Color.translate("&b&lPlayer Fights"));
         Bukkit.broadcastMessage("");
-        Bukkit.broadcastMessage(Color.translate("&a" + command.getSender() + " &7is currently looking for someone to fight!"));
+        Bukkit.broadcastMessage(Color.translate("&a" + player.getName() + " &7is currently looking for someone to fight!"));
         Bukkit.broadcastMessage(Color.translate("&aCoordinates: &a&l" + player.getLocation().getBlockX() + "&a&l, " + player.getLocation().getBlockZ()));
         Bukkit.broadcastMessage(Color.translate("&7&l&m----------------------------------------------"));
     }
