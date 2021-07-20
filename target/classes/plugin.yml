@@ -1,0 +1,5 @@
+name: SteriaUtils
+main: net.helydev.com.SteriaUtils
+version: 1.0
+description: Utils plugin for the Steria Network.
+author: DevDipin

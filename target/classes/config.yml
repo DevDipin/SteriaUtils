@@ -1,0 +1,162 @@
+misc-listeners:
+  advanced-pearl-glitch-listener:
+    pearl-glitch: "&cPearl glitching has been detected. Your enderpearl has been refunded."
+
+misc-commands:
+  geo-ip-command:
+    enabled: true
+    usage: "&cCorrect Usage: /geoip <player>"
+    not-online: "&6%target% is not currently connected to the &3&lSteria Network&6."
+    message: "&6%player% is currently connected to the network from &6&n%country%&6."
+  steria-command:
+    enabled: true
+    message:
+      - "&aInterested in checking out the &3Steria Rank&a? Head over to &dstore.steria.club&a."
+  setcolor-command:
+    enabled: true
+    messages:
+      usage: "&cCorrect Usage: /setcolor <color|reset>"
+      cannot-color: "&cYou cannot color this item."
+      colored: "&aThe color of your &f%item% &ahas just been changed to &c%color%&a."
+      invalid-color: "&cThat is not a valid color."
+      reset: "&cYou have reset the color of your item."
+
+###################################################################################
+
+loot-crate:
+  enabled: true # Do you want to enable this system?
+  item:
+    MATERIAL: ENDER_CHEST
+    ITEM-META: 0
+    DISPLAY-NAME: "&b&lLoot Crate &7(Right-Click)"
+    LORES:
+      - ""
+      - "&7You can &aRight Click &7on this item"
+      - "&7to open your &bLoot Crate&7!"
+      - ""
+      - "&7Loot crates can be obtained from"
+      - "&7our &astore&7."
+      - ""
+      - "&a&nstore.helydev.com"
+      - ""
+  inventory:
+    final-reward:
+      unclicked-name: "&c&l???"
+      lore: "&7You can &aleft click &7this item, to unlock this."
+    regular-reward:
+      unclicked-name: "&b&l???"
+      lore: "&7You can &aleft click &7this item, to unlock this."
+    chest-name: "&b&nLoot Crate:"
+  messages:
+    usage: "&c/lootcrate give <player|all> <amount>"
+    no-player: "&cThe player with that name could not be found."
+    broadcast:
+      - "&8[&4Alert&8] &d%player% &ahas just opened a &6&k||&6&l Summer Mystery Box &6&k||&a!"
+    invalid-number: "&cYou entered a invalid number."
+    closed: "&cYou have closed your &b&k|&bLoot Crate&b&k|&c, however you did not finish opening your rewards."
+    inventory-full: "&cYou have recieved a &b&k|&bLoot Crate&b&k|&c however, your inventory was full, it has been dropped on the ground below you!"
+    given: "&aYou have just recieved &a&l%amount%x &b&k|&bLoot Crate&b&k|&a!"
+    cooldown: "&cYou cannot open &b&k|&bLoot Crates&b&k|&c this quickly. Please wait a few seconds."
+    recieved: "&aYou have opened your &b&k|&bLoot Crate&b&k|&a and just recieved &a&l%item%&a!"
+    cannot-place: "&cYou cannot place a &bLoot Crate &citem."
+  other:
+    cannot-redeem:
+      message: "&cYou have not opened all your other &bLoot Crate &crewards, you must wait before opening your &b&k|&bFinal Reward&b&k|&c."
+      sound: true # Do you want to play a sound?
+      name: "EXPLODE" # The name of the sound.
+rewards:
+  FINAL-ITEMS:
+    HELY-RANK:
+      MATERIAL: NETHER_STAR
+      DISPLAY-NAME: "&6&lHely Rank &7(Lifetime)"
+      ITEM-META: 0
+      AMOUNT: 1
+      CHANCE: 0.5
+      COMMANDS:
+        - "voucher give %player% 1 HelyRank"
+        - "bcraw &8[&4&lAlert&8] &a%player% &7has just won the &6Hely Rank &7from a &bLoot Crate&7!"
+      LORES: # %unlocker% is who unlocked the crate.
+        - "&7All ranks can be obtained from our &astore&7."
+        - ""
+        - "&a&nstore.helydev.com"
+      ENCHANTS:
+        - "DURABILITY:5"
+    HELY-KIT:
+      MATERIAL: NETHER_STAR
+      DISPLAY-NAME: "&6&lHely Kit &7(Lifetime)"
+      ITEM-META: 0
+      AMOUNT: 1
+      CHANCE: 5
+      COMMANDS:
+        - "voucher give %player% HelyKit 1"
+        - "bcraw &8[&4&lAlert&8] &a%player% &7has just won the &6Hely Kit &7from a &bLoot Crate&7!"
+      LORES:
+        - "&7All ranks can be obtained from our &astore&7."
+        - ""
+        - "&a&nstore.helydev.com"
+      ENCHANTS:
+        - "DURABILITY:5"
+  REGULAR-ITEMS:
+    48x-DIAMOND-BLOCKS:
+      MATERIAL: DIAMOND_BLOCK
+      DISPLAY-NAME: "&e48x Diamond Blocks"
+      ITEM-META: 0
+      AMOUNT: 48
+      CHANCE: 99
+      COMMANDS:
+        - "give %player% DIAMOND_BLOCK 48"
+      LORES: {}
+      ENCHANTS: {}
+    32x-EMERALD-BLOCKS:
+      MATERIAL: EMERALD_BLOCK
+      DISPLAY-NAME: "&e32x Emerald Blocks"
+      ITEM-META: 0
+      AMOUNT: 32
+      CHANCE: 1
+      COMMANDS:
+        - "give %player% EMERALD_BLOCK 32"
+      LORES: {}
+      ENCHANTS: {}
+
+###################################################################################
+
+tips:
+  enabled: true # Do you want to enable the tips messages?
+  message-delay: 120 # The time of the delay between messages. (This must be in seconds)
+  sound: true # Do you want to play a sound when a message is sent?
+  sound-name: "DRINK" # The name of the sound.
+
+  broadcast-messages: # It will choose a random message.
+    - "&6[Tip] &7Did you know we implemented a &aBlock Shop&7? You can check it out by typing &a&n/blockshop&7 while in a SafeZone."
+    - "&6[Tip] &7Did you know the &3&lSteria Rank &7comes with many benefits? Check these features out from our store. &7&nstore.steria.club"
+
+###################################################################################
+
+anti-glitch:
+  phase-fix: true # Do you want to enable the Phase fix part of the system?
+  entity-fix: true # Do you want to enable the Entity fix part of the system?
+  sign-glitch-fix: true # Do you want to enable the Sign Glitch Fix part of the system?
+
+  messages:
+    cannot-use: "&cYou cannot use this through a &c&nSolid Block&c."
+
+###################################################################################
+
+anti-tab:
+  enabled: true
+
+  removed-list:
+    - "ver"
+    - "version"
+
+###################################################################################
+
+anti-op:
+  enabled: true
+  permission: "steria.op.bypass" # The permission to bypass.
+  executed-commands: # The commands executed when someone has OP, but not on the OP list.
+    - "deop %player%"
+    - "ban %player% Security Risk. Please join our teamspeak."
+  op-list: {}
+
+###################################################################################
