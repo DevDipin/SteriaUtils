@@ -126,10 +126,9 @@ public class SteriaUtils extends JavaPlugin {
         PluginManager manager = Bukkit.getServer().getPluginManager();
         manager.registerEvents(new VouchersListener(), this);
         manager.registerEvents(new SafetyListener(), this);
+        manager.registerEvents(new AntiTabHandler(), this);
         manager.registerEvents(new SteriaListener(), this);
-
         manager.registerEvents(new AdvancedAntiGlitchListener(), this);
-
         manager.registerEvents(new AdvancedPearlGlitchListener(), this);
         if (SteriaUtils.getPlugin().getConfig().getBoolean("loot-crate.enabled")) {
             manager.registerEvents(new LootCrateListener(), this);
